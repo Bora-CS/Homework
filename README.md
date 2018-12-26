@@ -19,7 +19,7 @@ git branch yourNewBranch
 
 4, Checkout your branch:
 ```
-it checkout yourNewBranch
+git checkout yourNewBranch
 ```
 
 5, Write your fantastic code:
