@@ -1,5 +1,5 @@
-import import java.util.Scanner;
-public class HomeWork2{
+import java.util.Scanner;
+public class HomeWork2{ //classname
     public static void main(String[] args){
         Scanner myScan = new Scanner(System.in);
 		System.out.println("Input Anything: ");
