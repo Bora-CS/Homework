@@ -11,7 +11,7 @@ public class SeleniumHomeWork1 {
 
 	public static WebDriver driver;
 	
-			@BeforeTest
+			
 	        public static void main(String[] args) {
 			System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
@@ -32,7 +32,7 @@ public class SeleniumHomeWork1 {
 			
 			driver.findElement(By.xpath("//input[@name='s-ref-checkbox-3269849011']")).click();
 		    driver.findElement(By.xpath("//img[@class='a-dynamic-image image-stretch-vertical frontImage']")).click();
-		//	driver.findElement(By.className("s-access-image cfMarker")).click();
+		
 		
 		
 			}
