@@ -1,5 +1,0 @@
-public class Task#1 Java{
-     public static void main (String [] args){ 
-    System.out.println("Hello World *");
-}
-}

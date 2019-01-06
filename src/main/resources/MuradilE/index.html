@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bora-cs.com</title>
+  </head>
+  <body>
+    <img src="/Users/Muradil/Documents/General Files/Bora/Bora - logo.png" />
+    <br />
+    <h1>Bora Student Account Sign-Up</h1>
+    <p>Create a bora student account by completing this below form!</p>
+    <select name="Course" id="course">
+      <option value="null">Select a course</option>
+      <option value="selenium">Selenium Automation</option>
+      <option value="javascript">Front End Development with Angular</option>
+      <option value="java">Java Spring Full Stack Development</option>
+    </select>
+    <form>
+      First Name: <br />
+      <input type="text" name="firstName" /><br />
+      Last Name: <br />
+      <input type="text" name="lastName" /><br />
+      Email: <br />
+      <input type="text" name="email" disabled="true" /><br />
+      User password: <br />
+      <input type="password" name="pwd" /><br />
+      Gender: <br>
+      <input type="radio" name="gender" value="Male">Male</input><br>
+      <input type="radio" name="gender" value="Female">Female</input><br>
+      <input type="submit" value="Submit" name="submitForm" onclick="popUp()"/>
+    </form>
+
+    <script>
+      function popUp() {
+        alert("You are about to be come an IT elite!");
+      }
+    </script>
+  </body>
+</html>
