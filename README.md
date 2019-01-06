@@ -9,7 +9,7 @@ git clone https://github.com/Muradil-Erkin/TeamBora.git
 
 2, Change direction into the project folder:
 ```
-cd TeamBora
+cd Homework
 ```
 
 3, Create your branch:
@@ -22,7 +22,7 @@ git branch yourNewBranch
 git checkout yourNewBranch
 ```
 
-5, Write your fantastic code:
+5, Make your changes:
 ```
 Hello World
 ```
@@ -42,11 +42,17 @@ git commit [file]
 git push origin yourNewBranch
 ```
 
+## Install the project
+
+Nagivate under your project folder, and then do:
+```
+mvn clean install
+```
+
 ### Authors
 * Muradil Erkin
 
 ### Contributors
-* Add your name here
 
 ### License
 This project is licensed under the MIT License.
