@@ -1,4 +1,4 @@
-# TeamBora
+# TeamBora Homework Project
 
 ### Getting Started
 
