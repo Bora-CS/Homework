@@ -1,22 +1,29 @@
 package MuradilE;
+import utilities.Constants;
+import utilities.Keywords;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import static utilities.DriverFactory.driver;
 
 public class BoraForm {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/Drivers/chromedriver");
-		WebDriver myDriver = new ChromeDriver();
-		myDriver.navigate().to("file:///Users/Muradil/eclipse-workspace/Homework/src/main/resources/MuradilE/index.html");
-		Thread.sleep(2000);
+		Keywords.startTest(Constants.BORA_FORM_URL);
+		Keywords.sleep(2);
 		
-		System.out.println("Landed on Bora Application Form Page");
+		Keywords.input(By.name("firstName"), "Muradil");
+		Keywords.sleep(1);
+		Keywords.input(By.name("lastName"), "Erkin");
+		Keywords.sleep(1);
+	
+		Dimension myDim = driver.findElement(By.tagName("img")).getSize();
 		
-		myDriver.close();
-		myDriver.quit();
-
+		Keywords.print("The Image Width: "+ myDim.getWidth() +
+						" Height: " + myDim.getHeight());
+		
+		Keywords.endTest();
 	}
 
 }
