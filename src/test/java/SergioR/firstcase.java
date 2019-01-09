@@ -9,15 +9,15 @@ public class firstcase {
 
 		Keywords.startTest("https://www.google.com/");
 
-		Keywords.sleep(3);
+		Keywords.sleep(2);
 
 		driver.navigate().to("https://www.youtube.com");
 
-		Keywords.sleep(3);
+		Keywords.sleep(2);
 
 		Keywords.back();
 
-		Keywords.sleep(3);
+		Keywords.sleep(2);
 
 		Keywords.endTest();
 
