@@ -11,6 +11,7 @@ public class BoraForm {
 	public static void main(String[] args) throws InterruptedException {
 		
 		Keywords.startTest(Constants.BORA_FORM_URL);
+		Keywords.getTitle();
 		Keywords.sleep(2);
 		
 		Keywords.input(By.name("firstName"), "Muradil");
