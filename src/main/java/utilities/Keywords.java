@@ -34,4 +34,18 @@ public class Keywords {
 	public static void input(By locator, String keysToSend) {
 		driver.findElement(locator).sendKeys(keysToSend);
 	}
+
+// Creat by jimmy
+	public static void refreshBrower(String url){
+		driver.navigate().refresh();
+	}
+
+
+
 }
+
+
+
+
+
+
