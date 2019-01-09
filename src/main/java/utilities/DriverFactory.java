@@ -9,7 +9,7 @@ public class DriverFactory {
 	public static WebDriver driver;
 	
 	public static void startChromeDriver () {
-		System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH_MAC);
+		System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH_WINDOWS);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
