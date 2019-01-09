@@ -35,10 +35,11 @@ public class Keywords {
 		driver.findElement(locator).sendKeys(keysToSend);
 	}
 
-	//by Sergio
+	// Sergio
+
 	public static void back() {
 		driver.navigate().back();
-		
+
 	}
 
 }
