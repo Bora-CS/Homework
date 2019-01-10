@@ -23,8 +23,12 @@ public class Keywords {
 	}
 	
 	public static void startTest(String url) {
-		DriverFactory.startChromeDriver();
-		driver.navigate().to(url);
+		try {
+			DriverFactory.startChromeDriver();
+			driver.navigate().to(url);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	public static void endTest() {
