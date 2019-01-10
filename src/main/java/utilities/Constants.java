@@ -6,3 +6,4 @@ public class Constants {
 	public static final String PROJECT_PATH = System.getProperty("user.dir").replaceAll("\\\\", "/"); // Raiden
 	public static final String BORA_FORM_URL =  "file:///" + PROJECT_PATH + "/src/main/resources/MuradilE/index.html"; // Raiden
 }
+	
