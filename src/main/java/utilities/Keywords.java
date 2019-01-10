@@ -38,7 +38,6 @@ public class Keywords {
 	// by Sergio
 	public static void back() {
 		driver.navigate().back();
-
 	}
 
 }
