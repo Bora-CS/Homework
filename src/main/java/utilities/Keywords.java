@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 public class Keywords {
 	
-	public static void sleep(int seconds) {
+	public static void waitFor(int seconds) {
 		try {
 			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
