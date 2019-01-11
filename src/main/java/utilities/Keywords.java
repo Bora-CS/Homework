@@ -27,8 +27,8 @@ public class Keywords {
 		DriverFactory.stopChromeDriver();
 	}
 	
-	public static void print(String message) {
-		System.out.println(message);
+	public static void print() {
+		System.out.println();
 	}
 	
 	public static void click(By locator) {	
@@ -38,4 +38,6 @@ public class Keywords {
 	public static void input(By locator, String keysToSend) {
 		driver.findElement(locator).sendKeys(keysToSend);
 	}
+	
+	
 }
