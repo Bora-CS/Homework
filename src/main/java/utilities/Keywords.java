@@ -38,4 +38,8 @@ public class Keywords {
 	public static void input(By locator, String keysToSend) {
 		driver.findElement(locator).sendKeys(keysToSend);
 	}
+	
+	public static void testMethod () {
+		
+	}
 }
