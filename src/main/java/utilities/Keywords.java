@@ -5,8 +5,6 @@ import static utilities.DriverFactory.driver;
 import org.openqa.selenium.By;
 
 public class Keywords {
-
-	public static void sleep(int seconds) {
 		try {
 			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
@@ -15,8 +13,12 @@ public class Keywords {
 	}
 
 	public static void startTest(String url) {
-		DriverFactory.startChromeDriver();
-		driver.navigate().to(url);
+		try {
+			DriverFactory.startChromeDriver();
+			driver.navigate().to(url);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static void endTest() {
