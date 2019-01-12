@@ -2,7 +2,15 @@ package utilities;
 
 import static utilities.DriverFactory.driver;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 
 public class Keywords {
@@ -58,5 +66,23 @@ public class Keywords {
 
 		print("Value " + expectedValue + " found: " + isFound);
 		return isFound;
+	}
+	
+	public static String getCurrentTimeStamp() {
+		Date myDate = new Date();
+		String timeStamp = new SimpleDateFormat("yyyyMMddHHmmssS").format(myDate);
+		return timeStamp;
+	}
+	
+	public static void takeScreenShot() {
+		waitFor(1);
+		TakesScreenshot scrShot = ((TakesScreenshot) driver);
+		File ScrFile = scrShot.getScreenshotAs(OutputType.FILE);
+		File ProjectFile = new File("target/ScreenShots/SH" + getCurrentTimeStamp()+ ".jpeg");
+		try {
+			FileUtils.copyFile(ScrFile, ProjectFile);
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }
