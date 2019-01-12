@@ -87,7 +87,9 @@ public class Keywords {
 		}
 	}
 	
-	public static void dragAndDrop(WebElement from, WebElement to) {
+	public static void dragAndDrop(By fromLocator, By toLocator) {
+		WebElement from = driver.findElement(fromLocator);
+		WebElement to = driver.findElement(toLocator);
 		Actions act = new Actions(driver);
 		act.clickAndHold(from).moveToElement(to).release().build().perform();
 	}
