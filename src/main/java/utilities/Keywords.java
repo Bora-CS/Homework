@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class Keywords {
 
@@ -84,5 +85,16 @@ public class Keywords {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	public static void dragAndDrop(WebElement from, WebElement to) {
+		Actions act = new Actions(driver);
+		act.clickAndHold(from).moveToElement(to).release().build().perform();
+	}
+	
+	public static void hoverOverToElement(By locator) {
+		WebElement elementToHover = driver.findElement(locator);
+		Actions act = new Actions(driver);
+		act.moveToElement(elementToHover).build().perform();
 	}
 }
