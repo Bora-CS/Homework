@@ -1,18 +1,20 @@
 package MuradilE;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import utilities.Constants;
+import utilities.Keywords;
+
+import static utilities.DriverFactory.driver;
+
 public class randomTest {
 
 	public static void main(String[] args) {
-//		System.getenv().forEach((k, v) -> {
-//		    System.out.println(k + ":" + v);
-//		});
+		Keywords.startTest(Constants.BORA_STUDENTS_URL);
 		
-		System.getProperties().forEach((k, v) -> {
-			System.out.println(k + ":" + v);
-		});
-		
-		//user.dir:/Users/Muradil/eclipse-workspace/Homework
-		
+		Keywords.searchForDataInTable("Phar@qq.com", By.id("studentInfo"));
+				
+        Keywords.endTest();
 	}
-
 }
