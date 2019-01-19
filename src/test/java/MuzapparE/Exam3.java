@@ -1,21 +1,13 @@
 package MuzapparE;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Exam3 {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/Drivers/chromedriver");
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.get(
-				"file:///Users/erkin/eclipse-workspace/Homework/src/main/resources/MuradilE/Bora%20UI%20Test/landing.html");
+		WebDriver driver = MuzapparKeywords.startMyTest();
 		WebElement signIn1 = driver.findElement(By.xpath("//ul[2]/li[2]/a"));
 		if (signIn1.isDisplayed()) {
 			System.out.println("Validating Sign In Is Here : pass");
@@ -31,11 +23,10 @@ public class Exam3 {
 		signIn1.click();
 		WebElement signIpText = driver.findElement(By.xpath("//div/p"));
 		String expectedSignIn = "Sign in to your Bora student account";
-		if (signIpText.isDisplayed() && signIpText.getText().equals(expectedSignIn)) {
-			System.out.println("Validating Im On the Sign In Page : pass");
-		} else {
-			System.out.println("Validating Im On the Sign In Page : false");
-		}
+
+		MuzapparKeywords.printValidation(expectedSignIn,
+				signIpText.isDisplayed() && signIpText.getText().equals(expectedSignIn));
+
 		driver.findElement(By.name("email")).sendKeys("Muzappar@bora-cs.com");
 		driver.findElement(By.name("password")).sendKeys("123456");
 		Thread.sleep(2000);
@@ -49,11 +40,10 @@ public class Exam3 {
 		}
 		WebElement studentsProfileText = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/h1"));
 		String expectedStudentsProfileText = "Student Profile";
-		if (studentsProfileText.isDisplayed() && studentsProfileText.getText().equals(expectedStudentsProfileText)) {
-			System.out.println("Validating The Students Profile Text : pass");
-		} else {
-			System.out.println("Validating The Students Profile Text : false");
-		}
+
+		MuzapparKeywords.printValidation(expectedStudentsProfileText,
+				studentsProfileText.isDisplayed() && studentsProfileText.getText().equals(expectedStudentsProfileText));
+
 		WebElement logOutBotton = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/h1"));
 		if (logOutBotton.isDisplayed()) {
 			System.out.println("Validating Log Out Botton Is Displayed : pass");
@@ -88,5 +78,7 @@ public class Exam3 {
 		driver.close();
 		driver.quit();
 	}
+
+	
 
 }
