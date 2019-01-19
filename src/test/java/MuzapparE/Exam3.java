@@ -18,21 +18,20 @@ public class Exam3 {
 				"file:///Users/erkin/eclipse-workspace/Homework/src/main/resources/MuradilE/Bora%20UI%20Test/landing.html");
 		WebElement signIn1 = driver.findElement(By.xpath("//*[@id=\"mobile-nav\"]/ul[2]/li[2]/a"));
 		if (signIn1.isDisplayed()) {
-			System.out.println("Sign In is here");
+			System.out.println("Validating Sign In Is Here : pass");
 		} else {
 			System.out.println("false");
 		}
 		WebElement signIn2 = driver.findElement(By.xpath("/html/body/div/div/div/div/div/a[2]"));
 		if (signIn2.isDisplayed()) {
-			System.out.println("Another Sign In is here");
+			System.out.println("Validating Another Sign In Is here : pass");
 		} else {
 			System.out.println("false");
 		}
-
 		signIn1.click();
 		WebElement signIpText = driver.findElement(By.xpath("/html/body/div/div/div/div/p"));
 		if (signIpText.isDisplayed()) {
-			System.out.println("im on the sign in page");
+			System.out.println("Validating Im On the Sign In Page : pass");
 		} else {
 			System.out.println("false");
 		}
@@ -43,19 +42,19 @@ public class Exam3 {
 		Thread.sleep(2000);
 		WebElement img = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div/div[1]/img"));
 		if (img.isDisplayed()) {
-			System.out.println("Found the img");
+			System.out.println("Validating The Img : pass");
 		} else {
 			System.out.println("false");
 		}
 		WebElement studentsProfileText = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/h1"));
 		if (studentsProfileText.isDisplayed()) {
-			System.out.println("Found the students profile text");
+			System.out.println("Validating The Students Profile Text : pass");
 		} else {
 			System.out.println("false");
 		}
 		WebElement logOutBotton = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/h1"));
 		if (logOutBotton.isDisplayed()) {
-			System.out.println("Log out botton is displayed");
+			System.out.println("Validating Log Out Botton Is Displayed : pass");
 		} else {
 			System.out.println("false");
 		}
@@ -63,7 +62,7 @@ public class Exam3 {
 		Thread.sleep(2000);
 		WebElement aleart = driver.findElement(By.id("exampleModalCenter"));
 		if (aleart.isDisplayed()) {
-			System.out.println("Aleart is displayed");
+			System.out.println("Validating Aleart Is Displayed : pass");
 		} else {
 			System.out.println("false");
 		}
@@ -71,7 +70,7 @@ public class Exam3 {
 		Thread.sleep(2000);
 		WebElement img2 = driver.findElement(By.xpath("//*[@id=\"mobile-nav\"]/ul[2]/li/a/img"));
 		if (img2.isDisplayed()) {
-			System.out.println("Im still on the page");
+			System.out.println("Validating Still On The Page : pass");
 		} else {
 			System.out.println("false");
 		}
@@ -80,7 +79,7 @@ public class Exam3 {
 		Thread.sleep(2000);
 		WebElement homePage = driver.findElement(By.xpath("/html/body/div/div/div/div/div/h1"));
 		if (homePage.isDisplayed()) {
-			System.out.println("Im back on the home page");
+			System.out.println("Validating Back On The Home Page : pass");
 		} else {
 			System.out.println("false");
 		}

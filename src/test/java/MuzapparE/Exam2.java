@@ -20,13 +20,13 @@ public class Exam2 {
 				"file:///Users/erkin/eclipse-workspace/Homework/src/main/resources/MuradilE/Bora%20UI%20Test/landing.html");
 		WebElement signUp1 = driver.findElement(By.xpath("//*[@id=\"mobile-nav\"]/ul[2]/li[1]/a"));
 		if (signUp1.isDisplayed()) {
-			System.out.println("Sign up is here");
+			System.out.println("Validating Sign up is here : pass");
 		} else {
 			System.out.println("false");
 		}
 		WebElement signUp2 = driver.findElement(By.xpath("/html/body/div/div/div/div/div/a[1]"));
 		if (signUp2.isDisplayed()) {
-			System.out.println("Another Sign up is here");
+			System.out.println("Validating Sconed Sign up is here : pass");
 		} else {
 			System.out.println("false");
 		}
@@ -35,7 +35,7 @@ public class Exam2 {
 
 		WebElement signUpText = driver.findElement(By.xpath("/html/body/div/div/div/div/p"));
 		if (signUpText.isDisplayed()) {
-			System.out.println("im on the sign up page");
+			System.out.println("Validating Im On The Sign Up Page : pass");
 		} else {
 			System.out.println("false");
 		}
@@ -52,13 +52,13 @@ public class Exam2 {
 		Thread.sleep(2000);
 		WebElement congraText = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div[1]/h4"));
 		if (congraText.isDisplayed()) {
-			System.out.println("found the Congratulations Text");
+			System.out.println("Validating Congratulations Text : pass");
 		} else {
 			System.out.println("false");
 		}
 		WebElement goBackToHomePage = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/a"));
 		if (goBackToHomePage.isDisplayed()) {
-			System.out.println("found the go back to homepage button!");
+			System.out.println("Validating go back to homepage button : pass");
 		} else {
 			System.out.println("false");
 		}
@@ -66,13 +66,11 @@ public class Exam2 {
 		boraCodingBootCamp.click();
 		WebElement contectInfo = driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div[2]/div[2]/h2"));
 		if (contectInfo.isDisplayed()) {
-			System.out.println("Bora Coding Bootcamp is dispalayed!");
+			System.out.println("Validating Bora Coding Bootcamp Is Dispalayed : pass");
 		} else {
 			System.out.println("false");
 		}
-
 		Thread.sleep(2000);
-
 		driver.close();
 		driver.quit();
 	}
