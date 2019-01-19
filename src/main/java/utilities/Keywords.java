@@ -9,6 +9,7 @@ import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -71,7 +72,7 @@ public class Keywords {
 	
 	public static String getCurrentTimeStamp() {
 		Date myDate = new Date();
-		String timeStamp = new SimpleDateFormat("yyyyMMddHHmmssS").format(myDate);
+		String timeStamp = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(myDate);
 		return timeStamp;
 	}
 	
@@ -98,5 +99,26 @@ public class Keywords {
 		WebElement elementToHover = driver.findElement(locator);
 		Actions act = new Actions(driver);
 		act.moveToElement(elementToHover).build().perform();
+	}
+	
+	public static void highlightElement(By locator) {
+		WebElement elementToHighlight = driver.findElement(locator);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", elementToHighlight);
+	}
+	
+	public static void clickOnHiddenElement(By locator) {
+		WebElement elementToClick = findElement(locator);
+		JavascriptExecutor js = (JavascriptExecutor) driver; 
+		js.executeScript("arguments[0].click()", elementToClick);
+	}
+	
+	public static WebElement findElement(By locator) {
+		if (Constants.DEMO_MODE) highlightElement(locator);
+		return driver.findElement(locator);
+	}
+	
+	public static void acceptAlert() {
+		driver.switchTo().alert().accept();
 	}
 }
