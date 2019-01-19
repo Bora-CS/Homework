@@ -17,25 +17,28 @@ public class Exam1 {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get(
 				"file:///Users/erkin/eclipse-workspace/Homework/src/main/resources/MuradilE/Bora%20UI%20Test/landing.html");
-		WebElement actualText = driver.findElement(By.xpath("/html/body/div/div/div/div/div/h1"));
-		if (actualText.isDisplayed()) {
-			System.out.println("Validating First Element On Homepage : pass");
+		WebElement actualText = driver.findElement(By.xpath("//div/h1"));
+		String expectedText = "Bora UI Automation Test";
+		if (actualText.isDisplayed() && actualText.getText().equals(expectedText)) {
+			System.out.println("Validating Bora UI Automation Test Element On Homepage : pass");
 		} else {
-			System.out.println("false");
+			System.out.println("Validating Bora UI Automation Test Element On Homepage : false");
 		}
-		WebElement actualText1 = driver.findElement(By.className("navbar-brand"));
-		if (actualText1.isDisplayed()) {
-			System.out.println("Validating Sconed Element On Homepage : pass");
+		WebElement actualText1 = driver.findElement(By.xpath("//div/a"));
+		String expectedText1 = "Bora UI Automation";
+		if (actualText1.isDisplayed() && actualText1.getText().equals(expectedText1)) {
+			System.out.println("Validating Bora UI Automation Element On Homepage : pass");
 		} else {
-			System.out.println("false");
+			System.out.println("Validating Bora UI Automation Element On Homepage : false");
 		}
-		driver.findElement(By.className("nav-link")).click();
+		driver.findElement(By.xpath("//ul[1]/li/a")).click();
 		Thread.sleep(2000);
-		WebElement actualText2 = driver.findElement(By.xpath("/html/body/div/div/div/div/p"));
-		if (actualText2.isDisplayed()) {
+		WebElement actualText2 = driver.findElement(By.xpath("//div/p"));
+		String expectedText2 = "Students Information";
+		if (actualText2.isDisplayed() && actualText2.getText().equals(expectedText2) ) {
 			System.out.println("Validating First Element On Students Information Page : pass");
 		} else {
-			System.out.println("false");
+			System.out.println("Validating First Element On Students Information Page : false");
 		}
 		List<WebElement> students = driver.findElements(By.xpath("//tbody/tr"));
 		System.out.println("There are " + (students.size() - 1) + " students ! ");
