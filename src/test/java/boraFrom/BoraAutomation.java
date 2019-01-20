@@ -1,7 +1,6 @@
 package boraFrom;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +14,7 @@ public class BoraAutomation {
 	public static WebDriver driver;
 	public static void main(String[] args) {
 		
-
+        // Test Scenario 1 :
 		System.setProperty("webdriver.chrome.driver","src/test/resources/Drivers/chromedriver");
 		
 		driver = new ChromeDriver();
@@ -29,12 +28,12 @@ public class BoraAutomation {
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
 		String actualTitle = driver.getTitle();
-        System.out.println("ActualTitle is " + actualTitle );
+        System.out.println("ExpectedTitle is " + actualTitle );
 		
 		driver.findElement(By.xpath("//a[@class = 'nav-link']")).click();
 		
 		String actualText = driver.findElement(By.xpath("/html/body/nav/div/a")).getText();
-		System.out.println("Expected Text is " + actualText);
+		System.out.println("ExpectedText is " + actualText);
 		
 		WebElement table = driver.findElement(By.id("studentInfo"));
 
@@ -42,40 +41,47 @@ public class BoraAutomation {
 		
 		System.out.println("Rows: "+listOfRows.size());
 		
-		int row_count = driver.findElements(By.xpath("//*[@id='studentInfo']/div[5]/table/tbody/tr")).size();
+		int row_count = driver.findElements(By.xpath("//*[@id='studentInfo']/tbody/tr")).size();
 		System.out.println("Number Of Rows = "+ row_count);
 		
-		int colum_count = driver.findElements(By.xpath("//*[@id='studentInf']/div[5]/table/tbody/tr[1]/td")).size();
+		int colum_count = driver.findElements(By.xpath("//*[@id='studentInfo']//th")).size();
 		System.out.println("Number of Colums = " + colum_count);
 	    
-		for (int i =1 ; i < row_count ; i++) {
-			System.out.println(row_count);
-		   			}
-		for (int i = 1; i < colum_count; i++) {
-		System.out.println(colum_count);
-		}
 		
+		for (int i = 2; i <= row_count; i++) {
+			
+		for (int j = 1; j <= colum_count; j++) {
+			
+		driver.findElement(By.xpath("//*[@id=\"studentInfo\"]/tbody/tr["+ i +"]/td" + "["+ j +"]")).getText();
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"studentInfo\"]/tbody/tr["+ i +"]/td" + "["+ j +"]")).getText());
+			}
+			
+		}
+        String tableInfo = driver.findElement(By.xpath("//*[@id=\"studentInfo\"]/tbody/tr[8]/td[2]")).getText();
+        if(tableInfo.matches(tableInfo)) {
+        	System.out.println("Venus Email Adress is " + tableInfo);
+        }else {
+        	System.out.println("False");
+        }
+        
+        String tableInfo2 = driver.findElement(By.xpath("//*[@id=\"studentInfo\"]/tbody/tr[8]/td[3]")).getText();
+        if(tableInfo2.matches(tableInfo2)) {
+        	System.out.println("Venus PhoneNum is " + tableInfo2);
+        }else {
+        	System.out.println("False");
+        }
 
 		driver.close();
 		driver.quit();
 		
-		
-		
 	} 
-       public static void actualTitle() {
-		
+       public static void actualTitle() {	
 		
 	}
-//	public static void getTitle(String actualTitle) {
-//		driver.get("file:///Users/xiaowenhu/eclipse-workspace/Homework/src/main/resources/MuradilE/Bora%20UI%20Test/landing.html");
-//		actualTitle = driver.getTitle();
-//		System.out.println("ActualTitle is " + actualTitle);
-//	}
+
 	public static void getText(String actualText) {
-//		driver.get("file:///Users/xiaowenhu/eclipse-workspace/Homework/src/main/resources/MuradilE/Bora%20UI%20Test/landing.html");
-//		actualText = driver.findElement(By.xpath("//p[@class= 'lead text-center']")).getText();
-//		System.out.println("ExpectedText is " + actualText);
+
 	}
 
     
-}
+    }

@@ -1,5 +1,7 @@
 package boraFrom;
 
+
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -7,12 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+
 public class Bora3 {
 
 	public static WebDriver driver;
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
-
+		// Test Scenario 3 :
         System.setProperty("webdriver.chrome.driver","src/test/resources/Drivers/chromedriver");
 		
 		driver = new ChromeDriver();
@@ -28,7 +32,7 @@ public class Bora3 {
         WebElement LoginButton1 = driver.findElement(By.xpath("/html/body/div/div/div/div/div/a[2]"));
         
 		if(LoginButton1.isDisplayed()) {
-			System.out.println("Sign in is on the page " );
+			System.out.println("LoginButton1 is on the page " );
 		}else {
 			System.out.println("False");
 		}
@@ -36,7 +40,7 @@ public class Bora3 {
         WebElement LoginButton2 = driver.findElement(By.xpath("//*[@id=\"mobile-nav\"]/ul[2]/li[2]/a"));
         
 		if(LoginButton2.isDisplayed()) {
-			System.out.println("Sign in is on the page " );
+			System.out.println("LoginButton2 is on the page " );
 		}else {
 			System.out.println("False");
 		}
@@ -55,44 +59,54 @@ public class Bora3 {
 		
 		WebElement studentPage = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/h1"));
 		if(studentPage.isDisplayed()) {
-			System.out.println("student page is display");
+			System.out.println("New Student is displayed on Student Profile");
 		}else {
 			System.out.println("False");
 		}
+		
+		WebElement studentsPage2 = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div/div[2]/p[1]"));
+		if(studentsPage2.isDisplayed()) {
+			System.out.println("Skill Set is displayed on the Student Profile");
+		}else {
+			System.out.println("False");
+		}
+		
 		WebElement LogoutButton = driver.findElement(By.xpath("//*[@id=\"mobile-nav\"]/ul[2]/li/a"));
 		if(LogoutButton.isDisplayed()) {
-			System.out.println("student page is display");
+			System.out.println("LogoutButton is display");
 		}else {
 			System.out.println("False");
 		}
 		
 		driver.findElement(By.xpath("//*[@id=\"mobile-nav\"]/ul[2]/li/a")).click();
-		WebElement Popuptext = driver.findElement(By.id("exampleModalCenterTitle"));
+		
+		Thread.sleep(5000);
+			
+		WebElement Popuptext = driver.findElement(By.xpath("//*[@id=\"exampleModalCenter\"]/div/div/div[1]"));
 		if(Popuptext.isDisplayed()) {
-			System.out.println("Are you sure is display");
+			System.out.println("Popuptext: Are you sure is display");
 		}else {
 			System.out.println("False");
 		}
-		driver.findElement(By.xpath("//*[@id=\"exampleModalCenter\"]/div/div/div[3]/button")).click();
-		WebElement studentsPage2 = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div/div[2]/p[1]"));
-		if(studentsPage2.isDisplayed()) {
-			System.out.println("studentsPage is display");
-		}else {
-			System.out.println("False");
-		}
+		
 		driver.findElement(By.xpath("//*[@id=\"exampleModalCenter\"]/div/div/div[3]/button")).click();
 		
+		String currentUrl = null;
 		
-		WebElement HomePage2 = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div/div[1]/img"));
-		if(HomePage2.isDisplayed()) {
-			System.out.println("HomePage2 is display");
-		}else {
-			System.out.println("False");
-		}
+		currentUrl = driver.getCurrentUrl();
+		
+		System.out.println(currentUrl);
+		
+		driver.findElement(By.xpath("//*[@id=\"exampleModalCenter\"]/div/div/div[3]/button")).click();
+		
 		driver.findElement(By.xpath("//a[@class='btn btn-info']")).click();
+		
+		String LandingPage = driver.getTitle();
+		
+        System.out.println("ExpectedTitle is " + LandingPage );
+		
 		driver.close();
+		
 		driver.quit();
-	}
-	   
-
-}
+	    }
+	    }
