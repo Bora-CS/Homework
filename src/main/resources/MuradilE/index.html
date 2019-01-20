@@ -4,16 +4,26 @@
     <title>Bora-cs.com</title>
   </head>
   <body>
-    <img src="/Users/Muradil/Documents/General Files/Bora/Bora - logo.png" />
+    <img src="../MuradilE/Bora - logo.png" />
     <br />
     <h1>Bora Student Account Sign-Up</h1>
-    <p>Create a bora student account by completing this below form!</p>
+    <p class="paragraph">Create a bora student account by completing this below form!</p>
+    <a href="https://www.bora-cs.com/">Check out our website!</a> <br> <br>
     <select name="Course" id="course">
       <option value="null">Select a course</option>
       <option value="selenium">Selenium Automation</option>
       <option value="javascript">Front End Development with Angular</option>
       <option value="java">Java Spring Full Stack Development</option>
-    </select>
+    </select> <br><br>
+    Select the languages you want to learn: <br>
+    <select id="courseLanguage" multiple size="6">
+      <option value="Java">Java</option>
+      <option value="Python">Python</option>
+      <option value="Javascript">Javascript</option>
+      <option value="SQL">SQL</option>
+      <option value="Ruby">Ruby</option>
+      <option value="Shell">Shell</option>
+    </select> <br><br>
     <form>
       First Name: <br />
       <input type="text" name="firstName" /><br />
@@ -25,9 +35,12 @@
       <input type="password" name="pwd" /><br />
       Gender: <br>
       <input type="radio" name="gender" value="Male">Male</input><br>
-      <input type="radio" name="gender" value="Female">Female</input><br>
+      <input type="radio" name="gender" value="Female">Female</input><br><br>
+      <input type="checkbox" name="notRobot">I'm not a robot</input> <br>
       <input type="submit" value="Submit" name="submitForm" onclick="popUp()"/>
     </form>
+
+    <iframe src="students.html" style="height:300px;width:600px;" id="StudentInfoFrame">Student Information</iframe>
 
     <script>
       function popUp() {
