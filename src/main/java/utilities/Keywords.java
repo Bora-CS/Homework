@@ -50,6 +50,11 @@ public class Keywords {
 		driver.findElement(locator).sendKeys(keysToSend);
 	}
 
+	// by Sergio
+	public static void navigateBack() {
+		driver.navigate().back();
+	}
+
 	public static boolean searchForDataInTable(String expectedValue, By tableLocator) {
 		boolean isFound = false;
 
