@@ -9,9 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class Bora2 {
- 
-	public static WebDriver driver;
-	public static void main(String[] args) {
+   
+	    public static WebDriver driver;
+	    public static void main(String[] args) {
 		
 		// Test Scenario 2 :
         System.setProperty("webdriver.chrome.driver","src/test/resources/Drivers/chromedriver");

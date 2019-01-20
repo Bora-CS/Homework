@@ -11,8 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BoraAutomation {
 
-	public static WebDriver driver;
-	public static void main(String[] args) {
+	    public static WebDriver driver;
+	    public static void main(String[] args) {
 		
         // Test Scenario 1 :
 		System.setProperty("webdriver.chrome.driver","src/test/resources/Drivers/chromedriver");
