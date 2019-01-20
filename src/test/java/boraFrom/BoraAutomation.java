@@ -15,6 +15,7 @@ public class BoraAutomation {
 	    public static void main(String[] args) {
 		
         // Test Scenario 1 :
+	    	
 		System.setProperty("webdriver.chrome.driver","src/test/resources/Drivers/chromedriver");
 		
 		driver = new ChromeDriver();

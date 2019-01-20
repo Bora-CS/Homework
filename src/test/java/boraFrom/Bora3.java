@@ -17,6 +17,7 @@ public class Bora3 {
 	    public static void main(String[] args) throws InterruptedException {
 		
 		// Test Scenario 3 :
+	    	
         System.setProperty("webdriver.chrome.driver","src/test/resources/Drivers/chromedriver");
 		
 		driver = new ChromeDriver();
