@@ -95,8 +95,6 @@ public class Bora2 {
 	    }else {
 	    	System.out.println("False");
 	    }
-	    
-	
 	    driver.close();
 	    driver.quit();
 	    }
