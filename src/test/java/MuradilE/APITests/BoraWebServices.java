@@ -1,9 +1,14 @@
 package MuradilE.APITests;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.json.simple.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -17,10 +22,10 @@ public class BoraWebServices {
 		String token = logInTest(email, password);
 		String actualEmail = getCurrentUserTest(token);
 		System.out.println("-----------------------------------");
-		Assert.assertEquals(email, actualEmail, "The output data doesn't match the input data");	
+		Assert.assertEquals(email, actualEmail, "The output data doesn't match the input data");
 	}
 
-	public static String getCurrentUserTest(String token) {	
+	public static String getCurrentUserTest(String token) {
 		System.out.println("-----------------------------------");
 		System.out.println("Getting the current logged in user:");
 		RestAssured.baseURI = APPLICATION_URL;
@@ -36,7 +41,7 @@ public class BoraWebServices {
 
 	public static String logInTest(String email, String password) {
 		System.out.println("-----------------------------------");
-		System.out.println("Logging in for: "+ email);
+		System.out.println("Logging in for: " + email);
 		// Log in
 		// Define our URI for the web service
 		RestAssured.baseURI = APPLICATION_URL;
@@ -66,6 +71,63 @@ public class BoraWebServices {
 		// Assert on the response body
 		Assert.assertTrue(responseBody.contains("token"), "The token is not found in the response body");
 		return token;
+	}
+
+	@Test
+	public static void getAllUserProfiles() {
+
+		RestAssured.baseURI = APPLICATION_URL;
+
+		RequestSpecification request = RestAssured.given();
+
+		Response response = request.get("profile/all");
+
+		// [0].handle
+		// Creating Json Path
+		JsonPath jp = response.jsonPath();
+
+//		HashMap<String, String> social = jp.get("[0].social");
+//		System.out.println("Social ==> " + social);
+//		
+//		System.out.println("LinkedIn URL ==> " + social.get("linkedin"));
+//		
+//		String instaURL = jp.get("[0].social.instagram");
+//		
+//		System.out.println("Instagram URL ==> " + instaURL);
+//
+//		String secondCompany = jp.get("[0].experience[1].company");
+//
+//		ArrayList<HashMap> experiences = jp.get("[0].experience");
+//		
+//		for (HashMap experience : experiences) {
+//			if (experience.containsValue("5c5245503342c205c707b402")) {
+//				String company = (String) experience.get("company");
+//				System.out.println(company);
+//			}	
+//		}
+//
+//		String name = jp.get("[0].user.name");
+//
+//		Experience[] experiences = jp.getObject("[0].experience", Experience[].class);
+//		
+//		for (Experience experience : experiences) {
+////			System.out.println(experience._id);
+//			if (experience._id.equals("5c5245503342c205c707b402")) {
+//				System.out.println(experience.company);
+//			}
+//		}
+
+		
+		Response response2 = request.get("/posts");
+		
+		JsonPath jp2 = response2.jsonPath();
+
+		Post[] posts = jp2.getObject("", Post[].class);
+
+		for (Post post : posts) {
+			System.out.println(post.text);
+		}
+
 	}
 
 }
