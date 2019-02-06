@@ -17,5 +17,17 @@ public class Experience {
 	public String to;
 	
 	public String description;
+	
+	public Experience (String title, String company, String location, String from, String to, String description) {
+		this.title = title;
+		this.company = company;
+		this.location = location;
+		this.from = from;
+		this.to = to;
+		this.description = description;
+	}
+	
+	public Experience () {
+	}
 
 }
